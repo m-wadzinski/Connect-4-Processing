@@ -81,10 +81,19 @@ def draw():
 
 def gameboard():
     fill(18, 7, 178) #blue
-    rect(100, 200, width-200, height-200)
+    rect(100, 200, width-200, height-200, 20)
+    #outline of gameboard holes
     for y in range(300, height, 160):
-        for x in range(200,width-200,180):
-            fill(255)
+        for x in range(200, width-200, 180):
+            stroke(18, 7, 130)
+            strokeWeight(5)
+            fill(18, 7, 178) #lighter blue
+            ellipse(x, y, circleSize*1.15, circleSize*1.15)
+    #gameboard holes
+    for y in range(300, height, 160):
+        for x in range(200, width-200, 180):
+            noStroke()
+            fill(255) #white
             ellipse(x, y, circleSize, circleSize)
 
 
