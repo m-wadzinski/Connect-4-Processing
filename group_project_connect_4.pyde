@@ -16,11 +16,11 @@ def setup():
     size(1500, 1200)
     background(255)
     noStroke()
-    global selectorX, circleSize, One, Two, Three, Four, Five, Six, Seven, Drop
+    global selectorX, circleSize, One, Two, Three, Four, Five, Six, Seven, Drop, player1
 
         
 def draw():
-    global selectorX, circleSize, One, Two, Three, Four, Five, Six, Seven, Drop
+    global selectorX, circleSize, One, Two, Three, Four, Five, Six, Seven, Drop, player1
     
     gameboard()
 
@@ -81,6 +81,16 @@ def draw():
 
 def gameboard():
     fill(18, 7, 178) #blue
+    stroke(18, 7, 130)
+    strokeWeight(5)
+    quad(105, 205, 130, 180, 1370, 180, 1395, 205)
+    fill(255)
+    noStroke()
+    for x in range(135, 1350, 180):
+        quad(x, 195, x + 15, 185, x + 115, 185, x + 130, 195)
+    fill(18, 7, 178) #blue
+    stroke(18, 7, 130)
+    strokeWeight(5)
     rect(100, 200, width-200, height-200, 20)
     #outline of gameboard holes
     for y in range(300, height, 160):
@@ -95,6 +105,11 @@ def gameboard():
             noStroke()
             fill(255) #white
             ellipse(x, y, circleSize, circleSize)
+            
+#def player1(x, y, s, s):
+    #fill(255,0,0)
+    #ellipse(x, y, circleSize, circleSize)
+
 
 
 def keyPressed():
