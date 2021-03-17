@@ -11,6 +11,11 @@ Seven = False
 
 Drop = False
 
+#Menu Variables
+Menu = True
+P1vCpu = False
+P1vP2 = False
+
 
 def setup():
     size(1500, 1200)
@@ -22,62 +27,80 @@ def setup():
 def draw():
     global selectorX, circleSize, One, Two, Three, Four, Five, Six, Seven, Drop, player1
     
-    gameboard()
-
-    if One:
-        background(255)
-        gameboard()
-        fill(255,0,0)
-        player1 = ellipse(200, 100, circleSize, circleSize)
-        One = False
-
-    elif Two:
-        background(255)
-        gameboard()
-        fill(255,0,0)
-        player1 = ellipse(380, 100, circleSize, circleSize)
-        Two = False
     
-    elif Three:
-        background(255)
+    mode = None
+    if Menu:
+        while mode not in ("1", "2"):
+            mode = input("Press 1 for P1vCPU Press 2 for P1vP2: ")
+            if mode == "1":
+                P1vCpu = True
+                break
+            elif mode == "2":
+                P1vP2 = True
+                break
+            else:
+                print("Please select a game mode")
+                continue
+    
+    
+    elif P1vP2:
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(560, 100, circleSize, circleSize)
-        Three = False
-        
-    elif Four:
-        background(255)
-        gameboard()
-        fill(255,0,0)
-        player1 = ellipse(740, 100, circleSize, circleSize)
-        Four = False
-        
-    elif Five:
-        background(255)
-        gameboard()
-        fill(255,0,0)
-        player1 = ellipse(920, 100, circleSize, circleSize)
-        Five = False
-        
-    elif Six:
-        background(255)
-        gameboard()
-        fill(255,0,0)
-        player1 = ellipse(1100, 100, circleSize, circleSize)
-        Six = False
-        
-    elif Seven:
-        background(255)
-        gameboard()
-        fill(255,0,0)
-        player1 = ellipse(1280, 100, circleSize, circleSize)
-        Seven = False
-        
-    #elif Drop:
-        #background(255)
-        #gameboard()
-        #Drop = False
 
+        if One:
+            background(255)
+            gameboard()
+            fill(255,0,0)
+            player1 = ellipse(200, 100, circleSize, circleSize)
+            One = False
+
+        elif Two:
+            background(255)
+            gameboard()
+            fill(255,0,0)
+            player1 = ellipse(380, 100, circleSize, circleSize)
+            Two = False
+    
+        elif Three:
+            background(255)
+            gameboard()
+            fill(255,0,0)
+            player1 = ellipse(560, 100, circleSize, circleSize)
+            Three = False
+        
+        elif Four:
+            background(255)
+            gameboard()
+            fill(255,0,0)
+            player1 = ellipse(740, 100, circleSize, circleSize)
+            Four = False
+        
+        elif Five:
+            background(255)
+            gameboard()
+            fill(255,0,0)
+            player1 = ellipse(920, 100, circleSize, circleSize)
+            Five = False
+        
+        elif Six:
+            background(255)
+            gameboard()
+            fill(255,0,0)
+            player1 = ellipse(1100, 100, circleSize, circleSize)
+            Six = False
+        
+        elif Seven:
+            background(255)
+            gameboard()
+            fill(255,0,0)
+            player1 = ellipse(1280, 100, circleSize, circleSize)
+            Seven = False
+        
+        #elif Drop:
+            #background(255)
+            #gameboard()
+            #Drop = False
+    
+    #elif P1vCPU:
 
 def gameboard():
     fill(18, 7, 178) #blue
