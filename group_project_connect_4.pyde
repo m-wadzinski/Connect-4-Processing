@@ -27,50 +27,43 @@ def draw():
     if One:
         background(255)
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(200, 100, circleSize, circleSize)
+        player1(200, 100)
         One = False
 
     elif Two:
         background(255)
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(380, 100, circleSize, circleSize)
+        player1(380, 100)
         Two = False
     
     elif Three:
         background(255)
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(560, 100, circleSize, circleSize)
+        player1(560, 100)
         Three = False
         
     elif Four:
         background(255)
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(740, 100, circleSize, circleSize)
+        player1(740, 100)
         Four = False
         
     elif Five:
         background(255)
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(920, 100, circleSize, circleSize)
+        player1(920, 100)
         Five = False
         
     elif Six:
         background(255)
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(1100, 100, circleSize, circleSize)
+        player1(1100, 100)
         Six = False
         
     elif Seven:
         background(255)
         gameboard()
-        fill(255,0,0)
-        player1 = ellipse(1280, 100, circleSize, circleSize)
+        player1(1280, 100)
         Seven = False
         
     #elif Drop:
@@ -106,9 +99,14 @@ def gameboard():
             fill(255) #white
             ellipse(x, y, circleSize, circleSize)
             
-#def player1(x, y, s, s):
-    #fill(255,0,0)
-    #ellipse(x, y, circleSize, circleSize)
+def player1(x, y):
+    fill(255, 0, 0)
+    ellipse(x, y, circleSize, circleSize)
+    stroke(200, 0, 0)
+    strokeWeight(5)
+    ellipse(x, y, circleSize / 1.3, circleSize / 1.3)
+    strokeWeight(1)
+    ellipse(x, y, circleSize / 1.5, circleSize / 1.5)
 
 
 
